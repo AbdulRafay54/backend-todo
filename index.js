@@ -3,7 +3,7 @@ import cors from "cors";
 dotenv.config();
 import express from "express";
 import connectDB from "./src/db/index.js";
-// import todosRoutes from "./src/routes/todos.routes.js";
+import todosRoutes from "./src/routes/todos.routes.js";
 
 const app = express();
 
@@ -15,7 +15,7 @@ app.get("/", (req, res) => {
 });
 
 // routes
-// app.use("/api/v1", todosRoutes);
+app.use("/api/v1", todosRoutes);
 
 connectDB()
   .then(() => {
